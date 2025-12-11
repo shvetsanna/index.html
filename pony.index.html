@@ -1,0 +1,42 @@
+ <!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Little Pony — Cutie Mark Test</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <h1>My Little Pony: Cutie Mark Test</h1>
+      <p class="subtitle">Ответь на вопросы — и узнаешь, какая ты пони и какой у тебя cutie mark ✨</p>
+    </header>
+
+    <section class="card">
+      <div class="progress">
+        <div class="progress__bar" id="bar"></div>
+      </div>
+
+      <div class="row">
+        <div class="chip" id="qCounter">Вопрос 1 из 7</div>
+        <div class="chip">Очки: <span id="score">0</span></div>
+      </div>
+
+      <h2 class="question" id="question">...</h2>
+      <div class="answers" id="answers"></div>
+
+      <div class="footer">
+        <button class="btn btn-ghost" id="backBtn" disabled>Назад</button>
+        <button class="btn" id="nextBtn" disabled>Дальше</button>
+      </div>
+    </section>
+
+    <footer class="mini">
+      <span>Сайт для сдачи: простой HTML/CSS/JS</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
