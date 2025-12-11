@@ -1,0 +1,158 @@
+ :root{
+  --bg1:#f7f7ff;
+  --bg2:#fff3f8;
+  --card:#ffffffcc;
+  --text:#1f2330;
+  --muted:#5a6072;
+  --line:#e7e9f2;
+  --accent:#6b5bff;
+}
+
+*{ box-sizing:border-box; }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--text);
+  min-height:100vh;
+  background: radial-gradient(900px 500px at 20% 10%, var(--bg2), transparent),
+              radial-gradient(900px 500px at 80% 0%, #e8f6ff, transparent),
+              linear-gradient(180deg, var(--bg1), #ffffff);
+}
+
+.app{
+  width:min(860px, 92vw);
+  margin: 32px auto;
+  display:grid;
+  gap:18px;
+}
+
+.top h1{ margin:0; font-size: clamp(24px, 3.6vw, 38px); }
+.subtitle{ margin:8px 0 0; color:var(--muted); }
+
+.card{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 18px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(31,35,48,0.10);
+}
+
+.progress{
+  height: 10px;
+  background: #f0f2fb;
+  border-radius: 999px;
+  overflow:hidden;
+  border: 1px solid var(--line);
+}
+.progress__bar{
+  height:100%;
+  width:0%;
+  background: linear-gradient(90deg, var(--accent), #ff4fd8);
+}
+
+.row{
+  margin: 14px 0 6px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:space-between;
+}
+
+.chip{
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  padding:8px 12px;
+  border:1px solid var(--line);
+  border-radius: 999px;
+  background:#fff;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.question{
+  margin: 14px 0 12px;
+  font-size: clamp(18px, 2.4vw, 26px);
+}
+
+.answers{
+  display:grid;
+  gap:10px;
+}
+
+.answer{
+  text-align:left;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border:1px solid var(--line);
+  background:#fff;
+  cursor:pointer;
+  transition: transform .06s ease, border-color .2s ease;
+}
+.answer:hover{ transform: translateY(-1px); border-color:#cfd5ff; }
+.answer.selected{ border-color: var(--accent); outline: 3px solid rgba(107,91,255,0.18); }
+
+.footer{
+  margin-top: 14px;
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.btn{
+  border:0;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--accent);
+  color:#fff;
+  font-weight: 700;
+  cursor:pointer;
+}
+.btn:disabled{ opacity:.5; cursor:not-allowed; }
+.btn-ghost{
+  background:#fff;
+  color: var(--text);
+  border:1px solid var(--line);
+}
+
+.mini{
+  color: var(--muted);
+  font-size: 13px;
+  text-align:center;
+}
+
+.result__grid{
+  display:grid;
+  gap:16px;
+  grid-template-columns: 1.2fr .8fr;
+}
+@media (max-width: 720px){
+  .result__grid{ grid-template-columns: 1fr; }
+}
+
+.result__title{ margin:0 0 6px; font-size: 28px; }
+.result__text{ margin:0 0 12px; color:var(--muted); line-height:1.4; }
+
+.badges{ display:flex; flex-wrap:wrap; gap:10px; margin: 10px 0 6px; }
+.result__actions{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 10px; }
+
+.markBox{
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:18px;
+  padding:14px;
+  display:grid;
+  place-items:center;
+  gap:10px;
+}
+.markBox__label{ color: var(--muted); font-size: 13px; }
+.markArt{ color: var(--accent); }
+
+/* Фоны под cutie mark */
+.bg-magic{ --accent:#6b5bff; --bg2:#f7e7ff; }
+.bg-kindness{ --accent:#ff4f87; --bg2:#ffe7f0; }
+.bg-loyalty{ --accent:#1aa3ff; --bg2:#e6f6ff; }
+.bg-laughter{ --accent:#ffb020; --bg2:#fff2d6; }
+.bg-honesty{ --accent:#22b573; --bg2:#e5fff1; }
+.bg-creativity{ --accent:#b04fff; --bg2:#f3e6ff; }
